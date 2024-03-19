@@ -1,0 +1,11 @@
+$ git remote -v
+origin	https://github.com/google-developer-training/basic-android-kotlin-compose-birthday-card-app.git (fetch)
+origin	https://github.com/google-developer-training/basic-android-kotlin-compose-birthday-card-app.git (push)
+
+
+this repo was at this HEAD commit with no apparent local diffs:
+commit 2b2699c81f6be09ddce2f141d8fcdbcc7e9db3e2 (HEAD -> main, origin/main, origin/HEAD)
+Author: OwenScott-GDS <olarosa@google.com>
+Date:   Mon May 2 10:41:55 2022 -0700
+
+    Fix course title in issue templates

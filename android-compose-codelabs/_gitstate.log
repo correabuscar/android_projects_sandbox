@@ -1,0 +1,23 @@
+$ git remote -v
+origin	https://github.com/googlecodelabs/android-compose-codelabs.git (fetch)
+origin	https://github.com/googlecodelabs/android-compose-codelabs.git (push)
+
+this repo was at this HEAD commit:
+
+commit 7dab63409fa80b0d190d6e2a3fa17b8680bef787 (HEAD -> main, origin/main, origin/HEAD)
+Author: Simona <35065668+simona-anomis@users.noreply.github.com>
+Date:   Mon Jul 25 13:03:31 2022 +0100
+
+    V1 revamp of the Navigation codelab start code (#259)
+
+    * V1 revamp of the Navigation codelab start code
+
+    * Revert deleted files for Testing codelab
+
+    * Revert "Revert deleted files for Testing codelab"
+
+    This reverts commit 3867f9ac0feeb83782205e0cbb1774f192bae1f8.
+
+    * Minor review changes
+
+    * Address PR comments

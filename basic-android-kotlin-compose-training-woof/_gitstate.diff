@@ -1,0 +1,807 @@
+diff --git a/.gitignore b/.gitignore
+new file mode 100644
+index 0000000..aa724b7
+--- /dev/null
++++ b/.gitignore
+@@ -0,0 +1,15 @@
++*.iml
++.gradle
++/local.properties
++/.idea/caches
++/.idea/libraries
++/.idea/modules.xml
++/.idea/workspace.xml
++/.idea/navEditor.xml
++/.idea/assetWizardSettings.xml
++.DS_Store
++/build
++/captures
++.externalNativeBuild
++.cxx
++local.properties
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+new file mode 100644
+index 0000000..26d3352
+--- /dev/null
++++ b/.idea/.gitignore
+@@ -0,0 +1,3 @@
++# Default ignored files
++/shelf/
++/workspace.xml
+diff --git a/.idea/.name b/.idea/.name
+new file mode 100644
+index 0000000..d00c478
+--- /dev/null
++++ b/.idea/.name
+@@ -0,0 +1 @@
++Woof
+\ No newline at end of file
+diff --git a/.idea/codeStyles/Project.xml b/.idea/codeStyles/Project.xml
+new file mode 100644
+index 0000000..7643783
+--- /dev/null
++++ b/.idea/codeStyles/Project.xml
+@@ -0,0 +1,123 @@
++<component name="ProjectCodeStyleConfiguration">
++  <code_scheme name="Project" version="173">
++    <JetCodeStyleSettings>
++      <option name="CODE_STYLE_DEFAULTS" value="KOTLIN_OFFICIAL" />
++    </JetCodeStyleSettings>
++    <codeStyleSettings language="XML">
++      <option name="FORCE_REARRANGE_MODE" value="1" />
++      <indentOptions>
++        <option name="CONTINUATION_INDENT_SIZE" value="4" />
++      </indentOptions>
++      <arrangement>
++        <rules>
++          <section>
++            <rule>
++              <match>
++                <AND>
++                  <NAME>xmlns:android</NAME>
++                  <XML_ATTRIBUTE />
++                  <XML_NAMESPACE>^$</XML_NAMESPACE>
++                </AND>
++              </match>
++            </rule>
++          </section>
++          <section>
++            <rule>
++              <match>
++                <AND>
++                  <NAME>xmlns:.*</NAME>
++                  <XML_ATTRIBUTE />
++                  <XML_NAMESPACE>^$</XML_NAMESPACE>
++                </AND>
++              </match>
++              <order>BY_NAME</order>
++            </rule>
++          </section>
++          <section>
++            <rule>
++              <match>
++                <AND>
++                  <NAME>.*:id</NAME>
++                  <XML_ATTRIBUTE />
++                  <XML_NAMESPACE>http://schemas.android.com/apk/res/android</XML_NAMESPACE>
++                </AND>
++              </match>
++            </rule>
++          </section>
++          <section>
++            <rule>
++              <match>
++                <AND>
++                  <NAME>.*:name</NAME>
++                  <XML_ATTRIBUTE />
++                  <XML_NAMESPACE>http://schemas.android.com/apk/res/android</XML_NAMESPACE>
++                </AND>
++              </match>
++            </rule>
++          </section>
++          <section>
++            <rule>
++              <match>
++                <AND>
++                  <NAME>name</NAME>
++                  <XML_ATTRIBUTE />
++                  <XML_NAMESPACE>^$</XML_NAMESPACE>
++                </AND>
++              </match>
++            </rule>
++          </section>
++          <section>
++            <rule>
++              <match>
++                <AND>
++                  <NAME>style</NAME>
++                  <XML_ATTRIBUTE />
++                  <XML_NAMESPACE>^$</XML_NAMESPACE>
++                </AND>
++              </match>
++            </rule>
++          </section>
++          <section>
++            <rule>
++              <match>
++                <AND>
++                  <NAME>.*</NAME>
++                  <XML_ATTRIBUTE />
++                  <XML_NAMESPACE>^$</XML_NAMESPACE>
++                </AND>
++              </match>
++              <order>BY_NAME</order>
++            </rule>
++          </section>
++          <section>
++            <rule>
++              <match>
++                <AND>
++                  <NAME>.*</NAME>
++                  <XML_ATTRIBUTE />
++                  <XML_NAMESPACE>http://schemas.android.com/apk/res/android</XML_NAMESPACE>
++                </AND>
++              </match>
++              <order>ANDROID_ATTRIBUTE_ORDER</order>
++            </rule>
++          </section>
++          <section>
++            <rule>
++              <match>
++                <AND>
++                  <NAME>.*</NAME>
++                  <XML_ATTRIBUTE />
++                  <XML_NAMESPACE>.*</XML_NAMESPACE>
++                </AND>
++              </match>
++              <order>BY_NAME</order>
++            </rule>
++          </section>
++        </rules>
++      </arrangement>
++    </codeStyleSettings>
++    <codeStyleSettings language="kotlin">
++      <option name="CODE_STYLE_DEFAULTS" value="KOTLIN_OFFICIAL" />
++    </codeStyleSettings>
++  </code_scheme>
++</component>
+\ No newline at end of file
+diff --git a/.idea/codeStyles/codeStyleConfig.xml b/.idea/codeStyles/codeStyleConfig.xml
+new file mode 100644
+index 0000000..79ee123
+--- /dev/null
++++ b/.idea/codeStyles/codeStyleConfig.xml
+@@ -0,0 +1,5 @@
++<component name="ProjectCodeStyleConfiguration">
++  <state>
++    <option name="USE_PER_PROJECT_SETTINGS" value="true" />
++  </state>
++</component>
+\ No newline at end of file
+diff --git a/.idea/compiler.xml b/.idea/compiler.xml
+new file mode 100644
+index 0000000..fb7f4a8
+--- /dev/null
++++ b/.idea/compiler.xml
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="CompilerConfiguration">
++    <bytecodeTargetLevel target="11" />
++  </component>
++</project>
+\ No newline at end of file
+diff --git a/.idea/gradle.xml b/.idea/gradle.xml
+new file mode 100644
+index 0000000..a2d7c21
+--- /dev/null
++++ b/.idea/gradle.xml
+@@ -0,0 +1,19 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="GradleMigrationSettings" migrationVersion="1" />
++  <component name="GradleSettings">
++    <option name="linkedExternalProjectsSettings">
++      <GradleProjectSettings>
++        <option name="testRunner" value="GRADLE" />
++        <option name="distributionType" value="DEFAULT_WRAPPED" />
++        <option name="externalProjectPath" value="$PROJECT_DIR$" />
++        <option name="modules">
++          <set>
++            <option value="$PROJECT_DIR$" />
++            <option value="$PROJECT_DIR$/app" />
++          </set>
++        </option>
++      </GradleProjectSettings>
++    </option>
++  </component>
++</project>
+\ No newline at end of file
+diff --git a/.idea/inspectionProfiles/Project_Default.xml b/.idea/inspectionProfiles/Project_Default.xml
+new file mode 100644
+index 0000000..a74ebba
+--- /dev/null
++++ b/.idea/inspectionProfiles/Project_Default.xml
+@@ -0,0 +1,29 @@
++<component name="InspectionProjectProfileManager">
++  <profile version="1.0">
++    <option name="myName" value="Project Default" />
++    <inspection_tool class="PreviewAnnotationInFunctionWithParameters" enabled="true" level="ERROR" enabled_by_default="true">
++      <option name="composableFile" value="true" />
++      <option name="previewFile" value="true" />
++    </inspection_tool>
++    <inspection_tool class="PreviewDimensionRespectsLimit" enabled="true" level="WARNING" enabled_by_default="true">
++      <option name="composableFile" value="true" />
++      <option name="previewFile" value="true" />
++    </inspection_tool>
++    <inspection_tool class="PreviewMultipleParameterProviders" enabled="true" level="ERROR" enabled_by_default="true">
++      <option name="composableFile" value="true" />
++      <option name="previewFile" value="true" />
++    </inspection_tool>
++    <inspection_tool class="PreviewMustBeTopLevelFunction" enabled="true" level="ERROR" enabled_by_default="true">
++      <option name="composableFile" value="true" />
++      <option name="previewFile" value="true" />
++    </inspection_tool>
++    <inspection_tool class="PreviewNeedsComposableAnnotation" enabled="true" level="ERROR" enabled_by_default="true">
++      <option name="composableFile" value="true" />
++      <option name="previewFile" value="true" />
++    </inspection_tool>
++    <inspection_tool class="PreviewPickerAnnotation" enabled="true" level="ERROR" enabled_by_default="true">
++      <option name="composableFile" value="true" />
++      <option name="previewFile" value="true" />
++    </inspection_tool>
++  </profile>
++</component>
+\ No newline at end of file
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+new file mode 100644
+index 0000000..6869fca
+--- /dev/null
++++ b/.idea/misc.xml
+@@ -0,0 +1,23 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="DesignSurface">
++    <option name="filePathToZoomLevelMap">
++      <map>
++        <entry key="../../../../layout/compose-model-1659593580459.xml" value="0.5" />
++        <entry key="../../../../layout/compose-model-1659694439685.xml" value="0.22" />
++        <entry key="../../../../layout/compose-model-1659694789492.xml" value="0.33" />
++        <entry key="../../../../layout/compose-model-1659700782326.xml" value="0.2725752508361204" />
++        <entry key="../../../../layout/compose-model-1659892244718.xml" value="0.33" />
++        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.241" />
++        <entry key="app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.241" />
++        <entry key="app/src/main/res/drawable/ic_woof_logo.xml" value="0.241" />
++      </map>
++    </option>
++  </component>
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
++    <output url="file://$PROJECT_DIR$/build/classes" />
++  </component>
++  <component name="ProjectType">
++    <option name="id" value="Android" />
++  </component>
++</project>
+\ No newline at end of file
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+new file mode 100644
+index 0000000..35eb1dd
+--- /dev/null
++++ b/.idea/vcs.xml
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+diff --git a/app/build.gradle b/app/build.gradle
+index f59a457..944befd 100644
+--- a/app/build.gradle
++++ b/app/build.gradle
+@@ -58,6 +58,7 @@ android {
+             excludes += '/META-INF/{AL2.0,LGPL2.1}'
+         }
+     }
++    namespace 'com.example.woof'
+ }
+ 
+ dependencies {
+diff --git a/app/src/main/AndroidManifest.xml b/app/src/main/AndroidManifest.xml
+index ecc5942..783dad4 100644
+--- a/app/src/main/AndroidManifest.xml
++++ b/app/src/main/AndroidManifest.xml
+@@ -14,8 +14,7 @@
+   ~ See the License for the specific language governing permissions and
+   ~ limitations under the License.
+   -->
+-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+-    package="com.example.woof">
++<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+ 
+     <application
+         android:allowBackup="true"
+diff --git a/app/src/main/java/com/example/woof/MainActivity.kt b/app/src/main/java/com/example/woof/MainActivity.kt
+index bcaf90d..c5eb017 100644
+--- a/app/src/main/java/com/example/woof/MainActivity.kt
++++ b/app/src/main/java/com/example/woof/MainActivity.kt
+@@ -15,12 +15,15 @@
+  */
+ package com.example.woof
+ 
++import android.content.res.Configuration.UI_MODE_NIGHT_NO
++import android.content.res.Configuration.UI_MODE_NIGHT_YES
+ import android.os.Bundle
+ import androidx.activity.ComponentActivity
+ import androidx.activity.compose.setContent
+ import androidx.annotation.DrawableRes
+ import androidx.annotation.StringRes
+ import androidx.compose.foundation.Image
++import androidx.compose.foundation.background
+ import androidx.compose.foundation.layout.Column
+ import androidx.compose.foundation.layout.Row
+ import androidx.compose.foundation.layout.fillMaxWidth
+@@ -28,9 +31,17 @@ import androidx.compose.foundation.layout.padding
+ import androidx.compose.foundation.layout.size
+ import androidx.compose.foundation.lazy.LazyColumn
+ import androidx.compose.foundation.lazy.items
++import androidx.compose.foundation.shape.RoundedCornerShape
++import androidx.compose.material.Card
++import androidx.compose.material.MaterialTheme
++import androidx.compose.material.Scaffold
+ import androidx.compose.material.Text
+ import androidx.compose.runtime.Composable
++import androidx.compose.ui.Alignment
+ import androidx.compose.ui.Modifier
++import androidx.compose.ui.draw.clip
++//import androidx.compose.ui.graphics.Color
++import androidx.compose.ui.layout.ContentScale
+ import androidx.compose.ui.res.painterResource
+ import androidx.compose.ui.res.stringResource
+ import androidx.compose.ui.tooling.preview.Preview
+@@ -55,9 +66,19 @@ class MainActivity : ComponentActivity() {
+  */
+ @Composable
+ fun WoofApp() {
+-    LazyColumn {
+-        items(dogs) {
+-            DogItem(dog = it)
++    Scaffold(
++        topBar = {
++            WoofTopAppBar()
++        }
++
++    ) {
++
++        LazyColumn(
++            modifier = Modifier.background(MaterialTheme.colors.background)
++        ) {
++            items(dogs) {
++                DogItem(dog = it)
++            }
+         }
+     }
+ }
+@@ -70,13 +91,37 @@ fun WoofApp() {
+  */
+ @Composable
+ fun DogItem(dog: Dog, modifier: Modifier = Modifier) {
+-    Row(
+-        modifier = Modifier
+-            .fillMaxWidth()
+-            .padding(8.dp)
++    Card(
++        //modifier = Modifier.padding(8.dp),
++        elevation = 4.dp,
++        modifier = modifier
++            //.background(MaterialTheme.colors.secondary)
++            //.background(MaterialTheme.colors.background) //XXX: this messes up the elevation! by adding a band so the light and dark background colors are divided!
++            .padding(all=2.dp)//,top=2.dp,bottom = 2.dp)
++//            .clip(RoundedCornerShape(30))
++////            .background(MaterialTheme.colors.error)
++////            .padding(8.dp)
++////            .clip(RoundedCornerShape(20))
++////            .background(MaterialTheme.colors.onSurface)
++////            .padding(8.dp)
++//
++        ,
++
++
++
+     ) {
+-        DogIcon(dog.imageResourceId)
+-        DogInformation(dog.name, dog.age)
++        Row(
++            modifier = Modifier
++                .fillMaxWidth()
++                //.background(MaterialTheme.colors.background)
++                //.padding(bottom=8.dp)
++                .background(MaterialTheme.colors.surface)
++                //.padding(18.dp)
++
++        ) {
++            DogIcon(dog.imageResourceId)
++            DogInformation(dog.name, dog.age)
++        }
+     }
+ }
+ 
+@@ -91,7 +136,11 @@ fun DogIcon(@DrawableRes dogIcon: Int, modifier: Modifier = Modifier) {
+     Image(
+         modifier = modifier
+             .size(64.dp)
+-            .padding(8.dp),
++            .padding(8.dp)
++            .clip(RoundedCornerShape(20)),
++        contentScale = ContentScale.Crop,
++
++
+         painter = painterResource(dogIcon),
+         /*
+          * Content Description is not needed here - image is decorative, and setting a null content
+@@ -101,6 +150,9 @@ fun DogIcon(@DrawableRes dogIcon: Int, modifier: Modifier = Modifier) {
+     )
+ }
+ 
++//val Color.hex: String
++//        get() = (value / 100000000u).toString(16) //nvmFIXME: why does this make the Preview fail?//fixed in canary
++//        //get() = (value).toString(16) //but this works fine
+ /**
+  * Composable that displays a dog's name and age.
+  *
+@@ -110,24 +162,79 @@ fun DogIcon(@DrawableRes dogIcon: Int, modifier: Modifier = Modifier) {
+  */
+ @Composable
+ fun DogInformation(@StringRes dogName: Int, dogAge: Int, modifier: Modifier = Modifier) {
++//    val fc: Color = MaterialTheme.colors.onSurface
++//    val bc: Color = MaterialTheme.colors.surface
+     Column {
+         Text(
+             text = stringResource(dogName),
++            //color = MaterialTheme.colors.onSurface,
++            style = MaterialTheme.typography.h2,
++
+             modifier = modifier.padding(top = 8.dp)
+         )
+         Text(
+-            text = stringResource(R.string.years_old, dogAge)
++            text = stringResource(R.string.years_old, dogAge),
++            style = MaterialTheme.typography.body1
++            //color = MaterialTheme.colors.onSurface
+         )
++//        Text(
++//            text = "FG:${fc.hex}",
++//            color = fc
++//        )
++//        Text(
++//            text = "BG:${bc.hex}",
++//            color = fc
++//        )
+     }
+ }
+ 
++
++@Composable
++fun WoofTopAppBar(modifier: Modifier = Modifier) {
++    Row(
++        modifier = modifier
++            .background(color = MaterialTheme.colors.primary)
++            .fillMaxWidth(),
++        verticalAlignment = Alignment.CenterVertically,
++
++    ) {
++        Image(
++            modifier = Modifier
++                .size(64.dp)
++                .padding(8.dp),
++
++            painter = painterResource(R.drawable.ic_woof_logo),
++            contentDescription = null
++        )
++        Text(
++            text = stringResource(R.string.app_name),
++            style = MaterialTheme.typography.h1
++        )
++
++
++    }
++}
++
++
+ /**
+  * Composable that displays what the UI of the app looks like in light theme in the design tab.
+  */
+-@Preview
++@Preview(
++    name="Light Theme",
++    showSystemUi = true,
++    apiLevel = 21,
++    uiMode = UI_MODE_NIGHT_NO,
++    showBackground = true,
++)
++@Preview(
++    uiMode = UI_MODE_NIGHT_YES,
++    name="Dark Theme",
++    showSystemUi = true,
++    apiLevel = 21,
++)
+ @Composable
+ fun WoofPreview() {
+-    WoofTheme(darkTheme = false) {
++    WoofTheme {
+         WoofApp()
+     }
+ }
+diff --git a/app/src/main/java/com/example/woof/ui/theme/Color.kt b/app/src/main/java/com/example/woof/ui/theme/Color.kt
+index 13c5217..f80f0dd 100644
+--- a/app/src/main/java/com/example/woof/ui/theme/Color.kt
++++ b/app/src/main/java/com/example/woof/ui/theme/Color.kt
+@@ -21,3 +21,17 @@ val Purple200 = Color(0xFFBB86FC)
+ val Purple500 = Color(0xFF6200EE)
+ val Purple700 = Color(0xFF3700B3)
+ val Teal200 = Color(0xFF03DAC5)
++
++
++//Light Theme
++val Grey50 = Color(0xFFF8F9FA)
++val Grey900 = Color(0xFF202124)
++val Grey700 = Color(0xFF5F6368)
++val Green50 = Color(0xFFE6F4EA)
++val Green100 = Color(0xFFCEEAD6)
++
++//Dark Theme
++val White = Color(0xFFFFFFFF)
++val Grey100 = Color(0xFFF1F3F4)
++val Cyan900 = Color(0xFF007B83)
++val Cyan700 = Color(0xFF129EAF)
+diff --git a/app/src/main/java/com/example/woof/ui/theme/Shape.kt b/app/src/main/java/com/example/woof/ui/theme/Shape.kt
+index 293961d..61bc2a4 100644
+--- a/app/src/main/java/com/example/woof/ui/theme/Shape.kt
++++ b/app/src/main/java/com/example/woof/ui/theme/Shape.kt
+@@ -21,6 +21,6 @@ import androidx.compose.ui.unit.dp
+ 
+ val Shapes = Shapes(
+     small = RoundedCornerShape(4.dp),
+-    medium = RoundedCornerShape(4.dp),
++    medium = RoundedCornerShape(16.dp),
+     large = RoundedCornerShape(0.dp)
+ )
+diff --git a/app/src/main/java/com/example/woof/ui/theme/Theme.kt b/app/src/main/java/com/example/woof/ui/theme/Theme.kt
+index f0658b7..734402b 100644
+--- a/app/src/main/java/com/example/woof/ui/theme/Theme.kt
++++ b/app/src/main/java/com/example/woof/ui/theme/Theme.kt
+@@ -20,17 +20,31 @@ import androidx.compose.material.MaterialTheme
+ import androidx.compose.material.darkColors
+ import androidx.compose.material.lightColors
+ import androidx.compose.runtime.Composable
++import androidx.compose.ui.graphics.Color
++
++//private val DarkColorPalette = darkColors(
++//    primary = Purple200,
++//    primaryVariant = Purple700,
++//    secondary = Teal200,
++//
++//    //added:
++//    surface = Color(0xFF101010),
++//    background = Color.Black,
++//)
+ 
+ private val DarkColorPalette = darkColors(
+-    primary = Purple200,
+-    primaryVariant = Purple700,
+-    secondary = Teal200
++    background = Cyan900,
++    surface = Cyan700,
++    onSurface = White,
++    primary = Grey900,
++    onPrimary = White,
++    secondary = Grey100
+ )
+ 
+ private val LightColorPalette = lightColors(
+-    primary = Purple500,
+-    primaryVariant = Purple700,
+-    secondary = Teal200
++    //primary = Purple500,
++    //primaryVariant = Purple700,
++    //secondary = Teal200,
+ 
+     /* Other default colors to override
+     background = Color.White,
+@@ -40,6 +54,14 @@ private val LightColorPalette = lightColors(
+     onBackground = Color.Black,
+     onSurface = Color.Black,
+     */
++    background = Green100,
++    surface = Green50,
++    onSurface = Grey900,
++    primary = Grey50,
++    onPrimary = Grey900,
++    secondary = Grey700
++
++
+ )
+ 
+ @Composable
+diff --git a/app/src/main/java/com/example/woof/ui/theme/Type.kt b/app/src/main/java/com/example/woof/ui/theme/Type.kt
+index 0c0fbed..fbc9142 100644
+--- a/app/src/main/java/com/example/woof/ui/theme/Type.kt
++++ b/app/src/main/java/com/example/woof/ui/theme/Type.kt
+@@ -17,10 +17,47 @@ package com.example.woof.ui.theme
+ 
+ import androidx.compose.material.Typography
+ import androidx.compose.ui.text.TextStyle
++import androidx.compose.ui.text.font.Font
+ import androidx.compose.ui.text.font.FontFamily
+ import androidx.compose.ui.text.font.FontWeight
+ import androidx.compose.ui.unit.sp
++import com.example.woof.R
+ 
++val AbrilFatface = FontFamily(
++    Font(R.font.abril_fatface_regular)
++)
++
++val Montserrat = FontFamily(
++    Font(R.font.montserrat_regular),
++    Font(R.font.montserrat_bold, FontWeight.Bold)
++)
++
++
++// Set of Material typography styles to start with
++val Typography = Typography(
++    h1 = TextStyle(
++        fontFamily = AbrilFatface,
++        fontWeight = FontWeight.Normal,
++        fontSize = 30.sp
++    ),
++    h2 = TextStyle(
++        fontFamily = Montserrat,
++        fontWeight = FontWeight.Bold,
++        fontSize = 20.sp
++    ),
++    h3 = TextStyle(
++        fontFamily = Montserrat,
++        fontWeight = FontWeight.Bold,
++        fontSize = 14.sp
++    ),
++    body1 = TextStyle(
++        fontFamily = Montserrat,
++        fontWeight = FontWeight.Normal,
++        fontSize = 14.sp
++    )
++
++)
++/*
+ // Set of Material typography styles to start with
+ val Typography = Typography(
+     body1 = TextStyle(
+@@ -41,3 +78,4 @@ val Typography = Typography(
+     )
+     */
+ )
++*/
+\ No newline at end of file
+diff --git a/app/src/main/res/font/abril_fatface_regular.ttf b/app/src/main/res/font/abril_fatface_regular.ttf
+new file mode 100644
+index 0000000..a291711
+Binary files /dev/null and b/app/src/main/res/font/abril_fatface_regular.ttf differ
+diff --git a/app/src/main/res/font/montserrat_bold.ttf b/app/src/main/res/font/montserrat_bold.ttf
+new file mode 100644
+index 0000000..55e0b1a
+Binary files /dev/null and b/app/src/main/res/font/montserrat_bold.ttf differ
+diff --git a/app/src/main/res/font/montserrat_regular.ttf b/app/src/main/res/font/montserrat_regular.ttf
+new file mode 100644
+index 0000000..1cd0259
+Binary files /dev/null and b/app/src/main/res/font/montserrat_regular.ttf differ
+diff --git a/app/src/main/res/values-night-v23/themes.xml b/app/src/main/res/values-night-v23/themes.xml
+new file mode 100644
+index 0000000..67d164e
+--- /dev/null
++++ b/app/src/main/res/values-night-v23/themes.xml
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="utf-8"?>
++<resources>
++
++    <style name="Theme.Woof" parent="android:style/Theme.Material.NoActionBar">
++        <item name="android:statusBarColor">@color/grey_50</item>
++        <item name="android:windowLightStatusBar">true</item>
++    </style>
++</resources>
+\ No newline at end of file
+diff --git a/app/src/main/res/values-night/themes.xml b/app/src/main/res/values-night/themes.xml
+new file mode 100644
+index 0000000..8b790d6
+--- /dev/null
++++ b/app/src/main/res/values-night/themes.xml
+@@ -0,0 +1,7 @@
++<?xml version="1.0" encoding="utf-8"?>
++<resources>
++    <style name="Theme.Woof" parent="android:style/Theme.Material.NoActionBar">
++        <item name="android:statusBarColor">@color/grey_900</item>
++
++    </style>
++</resources>
+\ No newline at end of file
+diff --git a/app/src/main/res/values-v23/themes.xml b/app/src/main/res/values-v23/themes.xml
+new file mode 100644
+index 0000000..d48c916
+--- /dev/null
++++ b/app/src/main/res/values-v23/themes.xml
+@@ -0,0 +1,9 @@
++<?xml version="1.0" encoding="utf-8"?>
++<resources>
++
++    <style name="Theme.Woof" parent="android:Theme.Material.Light.NoActionBar">
++        <item name="android:statusBarColor">@color/grey_50</item>
++        <item name="android:windowLightStatusBar">true</item>
++
++    </style>
++</resources>
+diff --git a/app/src/main/res/values/colors.xml b/app/src/main/res/values/colors.xml
+index de3366f..eb3ede0 100644
+--- a/app/src/main/res/values/colors.xml
++++ b/app/src/main/res/values/colors.xml
+@@ -22,4 +22,8 @@
+     <color name="teal_700">#FF018786</color>
+     <color name="black">#FF000000</color>
+     <color name="white">#FFFFFFFF</color>
++
++    <color name="grey_50">#FFF8F9FA</color>
++    <color name="grey_900">#FF202124</color>
++
+ </resources>
+\ No newline at end of file
+diff --git a/app/src/main/res/values/themes.xml b/app/src/main/res/values/themes.xml
+index 946d7d6..36c3f8e 100644
+--- a/app/src/main/res/values/themes.xml
++++ b/app/src/main/res/values/themes.xml
+@@ -17,5 +17,7 @@
+ <resources>
+     <style name="Theme.Woof" parent="android:Theme.Material.Light.NoActionBar">
+         <item name="android:statusBarColor">@color/purple_700</item>
++
++
+     </style>
+ </resources>
+diff --git a/build.gradle b/build.gradle
+index d2c3e88..6017dfb 100644
+--- a/build.gradle
++++ b/build.gradle
+@@ -4,8 +4,8 @@ buildscript {
+     }
+ }// Top-level build file where you can add configuration options common to all sub-projects/modules.
+ plugins {
+-    id 'com.android.application' version '7.1.3' apply false
+-    id 'com.android.library' version '7.1.3' apply false
++    id 'com.android.application' version '7.2.2' apply false
++    id 'com.android.library' version '7.2.2' apply false
+     id 'org.jetbrains.kotlin.android' version '1.6.10' apply false
+ }
+ 
+diff --git a/gradle/wrapper/gradle-wrapper.properties b/gradle/wrapper/gradle-wrapper.properties
+index ef7a6af..b260adb 100644
+--- a/gradle/wrapper/gradle-wrapper.properties
++++ b/gradle/wrapper/gradle-wrapper.properties
+@@ -1,6 +1,6 @@
+ #Mon Jan 31 16:54:41 PST 2022
+ distributionBase=GRADLE_USER_HOME
+-distributionUrl=https\://services.gradle.org/distributions/gradle-7.2-bin.zip
++distributionUrl=https\://services.gradle.org/distributions/gradle-7.3.3-bin.zip
+ distributionPath=wrapper/dists
+ zipStorePath=wrapper/dists
+ zipStoreBase=GRADLE_USER_HOME
+diff --git a/local.properties b/local.properties
+new file mode 100644
+index 0000000..5985c35
+--- /dev/null
++++ b/local.properties
+@@ -0,0 +1,8 @@
++## This file must *NOT* be checked into Version Control Systems,
++# as it contains information specific to your local configuration.
++#
++# Location of the SDK. This is only used by Gradle.
++# For customization when using a Version Control System, please read the
++# header note.
++#Thu Aug 04 08:05:07 CEST 2022
++sdk.dir=/home/user/Android/Sdk

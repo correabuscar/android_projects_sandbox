@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Tip Time</string>
+    <string name="calculate_tip">Calculate Tip</string>
+    <string name="cost_of_service_aka_bill_amount">Bill Amount</string>
+    <string name="tip_amount">Tip amount: %s</string>
+    <string name="total_pay">Total pay(with tip): %s</string>
+    <string name="cost_of_service_interpreted_amount">Interpreted amount of %s: %s</string>
+    <string name="invalid_number_input">*Above you must enter a positive Double number%s\n eg. 12.34 or 1234E-2 or 12.34f or 12.34d</string>
+    <string name="invalid_number_input_addon">\ that\'s not bigger than 100.0</string> <!-- why is the prefixed space truncated unless escaped?! tf! -->
+    <string name="no_tip_without_cost">\?</string> <!-- (cost&amp;/tip% not given yet)</string> -->
+
+    <string name="how_was_the_service">Tip (%)</string>
+    <string name="interpreted_tip_percent">Interpreted Tip (%%): %s%%</string>
+    <string name="round_up_tip">Round up tip?</string>
+    <string name="round_up_total">Round up total?</string>
+    <string name="final_tip_after_roundings">Final tip after roundings: %s</string>
+</resources>

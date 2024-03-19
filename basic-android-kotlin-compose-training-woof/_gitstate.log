@@ -1,0 +1,14 @@
+$ git remote -v
+origin	https://github.com/google-developer-training/basic-android-kotlin-compose-training-woof.git (fetch)
+origin	https://github.com/google-developer-training/basic-android-kotlin-compose-training-woof.git (push)
+
+repo was at this HEAD:
+
+commit 4e4ee52d7304d6287974aff88f5d397f14b2bcf5 (HEAD -> starter, origin/starter)
+Author: schordas <schordas@google.com>
+Date:   Thu Jul 14 14:58:30 2022 -0700
+
+    Initial starter branch commit
+
+
+

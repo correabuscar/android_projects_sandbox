@@ -1,0 +1,205 @@
+diff --git a/TestingCodelab/app/build.gradle b/TestingCodelab/app/build.gradle
+index efdb0cb..83b5fbc 100644
+--- a/TestingCodelab/app/build.gradle
++++ b/TestingCodelab/app/build.gradle
+@@ -77,12 +77,15 @@ android {
+     composeOptions {
+         kotlinCompilerExtensionVersion rootProject.composeVersion
+     }
+-
+     packagingOptions {
+-        exclude "META-INF/licenses/**"
+-        exclude "META-INF/AL2.0"
+-        exclude "META-INF/LGPL2.1"
++        jniLibs {
++            excludes += ['META-INF/licenses/**']
++        }
++        resources {
++            excludes += ['META-INF/licenses/**', 'META-INF/AL2.0', 'META-INF/LGPL2.1']
++        }
+     }
++
+ }
+ 
+ dependencies {
+diff --git a/TestingCodelab/app/src/androidTest/java/com/example/compose/rally/TopAppBarTest.kt b/TestingCodelab/app/src/androidTest/java/com/example/compose/rally/TopAppBarTest.kt
+new file mode 100644
+index 0000000..ad17cd2
+--- /dev/null
++++ b/TestingCodelab/app/src/androidTest/java/com/example/compose/rally/TopAppBarTest.kt
+@@ -0,0 +1,86 @@
++package com.example.compose.rally
++
++
++import androidx.compose.ui.test.*
++import androidx.compose.ui.test.junit4.createComposeRule
++import com.example.compose.rally.ui.components.RallyTopAppBar
++import com.example.compose.rally.ui.overview.OverviewBody
++import com.example.compose.rally.ui.theme.RallyTheme
++import org.junit.Rule
++import org.junit.Test
++
++class TopAppBarTest {
++
++    @get:Rule
++    val composeTestRule = createComposeRule()
++
++
++    @Test
++    fun rallyTopAppBarTest() {
++        val allScreens = RallyScreen.values().toList()
++
++        composeTestRule.setContent {
++            RallyTheme {
++                RallyTopAppBar(
++                    allScreens = allScreens,
++                    onTabSelected = { },
++                    currentScreen = RallyScreen.Accounts,
++
++                    )
++            }
++        }
++
++        composeTestRule
++            .onNodeWithContentDescription(RallyScreen.Accounts.name)
++            .assertIsSelected()
++        //Thread.sleep(5000)
++
++        //composeTestRule.onRoot().printToLog("currentLabelExists")
++
++//        composeTestRule
++//            .onNodeWithText(RallyScreen.Accounts.name.uppercase())
++//            .assertExists()
++
++        composeTestRule
++            .onNodeWithContentDescription(RallyScreen.Accounts.name)
++            .assertExists()
++
++        composeTestRule.onRoot(useUnmergedTree = true).printToLog("currentLabelExists")
++
++        composeTestRule
++            .onNode(
++                hasText(RallyScreen.Accounts.name.uppercase()) and
++                        hasParent(
++                            hasContentDescription(RallyScreen.Accounts.name)
++                        ),
++                useUnmergedTree = true
++            )
++            .assertExists()
++
++    }
++
++    @Test
++    fun overviewScreen_alertsDisplayed() {
++        composeTestRule.mainClock.autoAdvance = false
++        composeTestRule.setContent {
++            RallyTheme {
++                OverviewBody()
++            }
++        }
++
++        composeTestRule
++            .onNodeWithText("Alerts")
++            .assertIsDisplayed()
++
++
++        //Thread.sleep(5000) //no animation, prolly because of this? or it just doesn't happen in instrumentation tests?
++        //This following block makes some animation happen, tho it's not real time, but less than real time, or so I think.
++        //XXX: must be false at start of test: composeTestRule.mainClock.autoAdvance = false
++        //the UI test is supposed to fail tho.
++        composeTestRule.waitUntil(5000) {
++            composeTestRule.mainClock.advanceTimeByFrame()
++            false
++        }
++    }
++
++}
+diff --git a/TestingCodelab/app/src/main/java/com/example/compose/rally/ui/overview/OverviewScreen.kt b/TestingCodelab/app/src/main/java/com/example/compose/rally/ui/overview/OverviewScreen.kt
+index c7c92ea..0f5dfcc 100644
+--- a/TestingCodelab/app/src/main/java/com/example/compose/rally/ui/overview/OverviewScreen.kt
++++ b/TestingCodelab/app/src/main/java/com/example/compose/rally/ui/overview/OverviewScreen.kt
+@@ -16,8 +16,7 @@
+ 
+ package com.example.compose.rally.ui.overview
+ 
+-import androidx.compose.animation.core.animateDpAsState
+-import androidx.compose.animation.core.tween
++import androidx.compose.animation.core.*
+ import androidx.compose.foundation.background
+ import androidx.compose.foundation.layout.Arrangement
+ import androidx.compose.foundation.layout.Column
+@@ -50,6 +49,7 @@ import androidx.compose.ui.res.stringResource
+ import androidx.compose.ui.semantics.clearAndSetSemantics
+ import androidx.compose.ui.semantics.semantics
+ import androidx.compose.ui.tooling.preview.Preview
++import androidx.compose.ui.unit.Dp
+ import androidx.compose.ui.unit.dp
+ import com.example.compose.rally.R
+ import com.example.compose.rally.RallyScreen
+@@ -95,24 +95,36 @@ private fun AlertCard() {
+         )
+     }
+ 
+-    var currentTargetElevation by remember { mutableStateOf(1.dp) }
+-    LaunchedEffect(Unit) {
+-        // Start the animation
+-        currentTargetElevation = 8.dp
+-    }
+-    val animatedElevation = animateDpAsState(
+-        targetValue = currentTargetElevation,
+-        animationSpec = tween(durationMillis = 500),
+-        finishedListener = {
+-            currentTargetElevation = if (currentTargetElevation > 4.dp) {
+-                1.dp
+-            } else {
+-                8.dp
+-            }
+-        }
++//    var currentTargetElevation by remember { mutableStateOf(1.dp) }
++//    LaunchedEffect(Unit) {
++//        // Start the animation
++//        currentTargetElevation = 8.dp
++//    }
++//    val animatedElevation = animateDpAsState(
++//        targetValue = currentTargetElevation,
++//        animationSpec = tween(durationMillis = 500),
++//        finishedListener = {
++//            currentTargetElevation = if (currentTargetElevation > 4.dp) {
++//                1.dp
++//            } else {
++//                8.dp
++//            }
++//        }
++//    )
++//    Card(elevation = animatedElevation.value) {
++    val infiniteElevationAnimation = rememberInfiniteTransition()
++    val animatedElevation: Dp by infiniteElevationAnimation.animateValue(
++        initialValue = 1.dp,
++        targetValue = 8.dp,
++        typeConverter = Dp.VectorConverter,
++        animationSpec = infiniteRepeatable(
++            animation = tween(500),
++            repeatMode = RepeatMode.Reverse
++        )
+     )
+-    Card(elevation = animatedElevation.value) {
+-        Column {
++    Card(elevation = animatedElevation) {
++
++    Column {
+             AlertHeader {
+                 showDialog = true
+             }
+diff --git a/TestingCodelab/build.gradle b/TestingCodelab/build.gradle
+index f1b94bb..31c879a 100644
+--- a/TestingCodelab/build.gradle
++++ b/TestingCodelab/build.gradle
+@@ -30,7 +30,7 @@ buildscript {
+         coroutinesVersion = "1.5.2"
+         espressoVersion = '3.4.0'
+         fragmentVersion = '1.3.6'
+-        gradleVersion = '7.2.0'
++        gradleVersion = '7.2.1'
+         junitVersion = '4.13.1'
+         kotlinVersion = '1.6.10'
+         ktlintVersion = '0.42.1'
